@@ -7,7 +7,8 @@ with base as (
         case when order_status = 'fail' then  (amount * -1)::decimal/100::decimal else amount::decimal/100::decimal end as amount,
         created::date as order_created_at 
     
-    from sunrise.stripe_payments
+    from  {{ source('sunrise','stripe_payments') }}
+
 ) 
 
 select * from base 
