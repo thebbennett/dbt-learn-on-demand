@@ -1,7 +1,7 @@
 with customers as (
 
     select * from {{ ref('stg_customers')}}
-    
+
 ), orders as (
 
     select * from {{ ref('stg_orders') }}
@@ -15,9 +15,11 @@ with customers as (
     select
 
        orders.customer_id,
-       sum(payments.amount) as lifetime_value  
+       sum(payments.amount) as lifetime_value
 
-    from orders 
+    from orders
+
+    where status = 'success'
 
     left join payments using(order_id)
 
@@ -56,4 +58,3 @@ with customers as (
 )
 
 select * from final
-

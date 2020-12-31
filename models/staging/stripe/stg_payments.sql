@@ -4,11 +4,13 @@ with base as (
         orderid as order_id,
         paymentmethod as payment_method,
         status as order_status,
-        case when order_status = 'fail' then  (amount * -1)::decimal/100::decimal else amount::decimal/100::decimal end as amount,
-        created::date as order_created_at 
-    
+
+        -- amount is stored in cents, convert it to cents_to_dollars
+        {{ cents_to_dollars('payment_amount') }} as amount,
+        created::date as order_created_at
+
     from  {{ source('sunrise','stripe_payments') }}
 
-) 
+)
 
-select * from base 
+select * from base
