@@ -4,7 +4,7 @@ models:
 
     - name: stg_customers
       description: Staged customer data from our jaffle shop app.
-      columns: 
+      columns:
         - name: customer_id
           description: The primary key for customers.
           tests:
@@ -13,7 +13,7 @@ models:
 
     - name: stg_orders
       description: Staged order data from our jaffle shop app.
-      columns: 
+      columns:
         - name: order_id
           description: Primary key for orders.
           tests:
@@ -35,5 +35,5 @@ models:
         - name: customer_id
           tests:
             - relationships:
-                to: ref('customers')
+                to: ref('stg_customers')
                 field: id

@@ -1,15 +1,12 @@
-Welcome to your new dbt project!
+## dbt on demand
 
-### Using the starter project
+This repo contains my attempt at the [dbt on demand tutorial](https://courses.getdbt.com/collections). 
 
-Try running the following commands:
-- dbt run
-- dbt test
+## To Run
+Job set up in dbt Cloud to run every day at 4am.
+`dbt run`
+`dbt test`
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## lineage graph
+![Image of lineage graph for dbt on demand project](https://static.wixstatic.com/media/fc8483_6cfea163eae3492197a7444eda267067~mv2.png)
