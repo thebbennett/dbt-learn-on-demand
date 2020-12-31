@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+    - name: sunrise
+      database: dev
+      tables:
+        - name: jaffle_shop_orders
+        - name: jaffle_shop_customers
